@@ -1,16 +1,14 @@
 # arrive-alive
 Chimichanga
 easy
-test
+testgit pull
 WTF
 twistedNutz
 carl smells
+hey byran
 DerrtyDanni was here
 Testing on my Mac
 Chimichanga 2
 CHange in new branch
-Miguel cant spell
-WTF 
-test for george
-Don't forget my tacos.....
-tacos good
+I am a team player...... kind of....
+sometimes
