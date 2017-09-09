@@ -1,0 +1,56 @@
+# To clone a directory
+
+		git clone https://yourRemoteRepositoryUrl
+
+		it may prompt you for your user name and password
+
+# if you created a new git directory (folder), you will need to navigate to the diretory and type: 
+
+		git init
+
+# next you will need to do a pull down of the latest code:
+
+		git pull
+
+
+# to see a history of git commits use git log:
+
+		git log 
+
+
+# if you need to check if you have file changes "staged" but not commited yet, use git status:
+
+		git status
+
+
+# before you can commit changes, you have to "stage" (add) your files:
+
+### to "stage" individual files that were changed
+
+		git add [filepath] # This adds an individual file
+
+### to "stage" "All" files in the directory that have changes ---- most all of the time this is what we will use 
+
+
+		git add . 		# This adds all files with changes
+
+		or
+
+		git add --all
+
+# Once you have staged your files, you can then commit them
+
+		git commit -m "Your notes and comments about your commit"
+
+# you should be able checked the files that are staged again
+
+		git status
+
+# now you should be able to push your changes to GitHub
+
+		git push
+
+
+
+
+######   If that all fails, I suck and your on your own!
