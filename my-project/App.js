@@ -7,6 +7,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <ProfileButton/>
+        <Text>ArriveAlive</Text>
       </View>
     );
   }
