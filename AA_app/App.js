@@ -13,7 +13,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <ProfileButton/>
-        <Text>Arrive-Alive</Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
+          <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive</Text>
       </View>
     );
   }
@@ -22,7 +23,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: 'skyblue',
+
     alignItems: 'center',
     justifyContent: 'center',
   },
