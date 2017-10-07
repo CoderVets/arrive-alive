@@ -23,7 +23,8 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        
+      <ProfileButton/><Text style={styles.welcome}>
           Welcome to React Native! this shoud work
         </Text>
         <Text style={styles.instructions}>
@@ -32,13 +33,28 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-      </View>
-    );
-  }
+      <Text>Arrive-Alive</Text>
+    </View>
+  );
+}
 }
 
 const styles = StyleSheet.create({
-  container: {
+container: {
+  flex: 1,
+  backgroundColor: 'pink',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+});
+       
+    
+  
+  
+
+
+const styles = StyleSheet.create({
+ container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
