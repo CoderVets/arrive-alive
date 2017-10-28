@@ -13,8 +13,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <ProfileButton/>
-        <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
-          <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive</Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}} > Arrive</Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}}>Alive</Text>
       </View>
     );
   }
