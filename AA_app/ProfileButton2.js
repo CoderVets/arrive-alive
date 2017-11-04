@@ -21,22 +21,29 @@
  *
  * @flow
  */
-'use strict';
 
-const React = require('react');
-const {
+import React, { Component } from 'react';
+import {
   Image,
   StyleSheet,
-} = require('react-native');
+  TouchableHighlight,
+  Alert
+} from 'react-native';
+import {
+  StackNavigator,
+} from 'react-navigation';
 
 
-class ProfileButton extends React.Component {
+export default class ProfileButton2 extends Component {
   render() {
+    const{ navigate } = this.props.navigation;
     return (
-      <Image
-        source={{uri: `http://www.pecs.co.za/wp-content/uploads/2016/11/arrive-alive.jpg`}}
-        style={styles.profilePic}
-      />
+        <TouchableHighlight onPress={() => navigate('ProfilePage')}>
+            <Image
+                source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'}}
+                style={styles.profilePic}
+            />
+        </TouchableHighlight>
     );
   }
 }
@@ -49,4 +56,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = ProfileButton;
+

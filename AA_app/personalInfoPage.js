@@ -5,67 +5,26 @@
  */
 
 import React, { Component } from 'react';
-import {
-  StackNavigator,
-} from 'react-navigation';
-/*import {
+import {  
   Platform,
   StyleSheet,
   Text,
-  View,
-  ScrollView,
-  ScrollViewStyle,
-  Button,
-  Navigator
-} from 'react-native';*/
-import ArriveAlive from './ArriveAlive'
-import ProfilePage from './profilePage'
+  View
+} from 'react-native';
 
-const App=StackNavigator({
-  Home: {screen: ArriveAlive},
-  Profile: {screen: ProfilePage},
-  //ProfilePage: {screen: ProfilePage}
-})
-
-export default App
-  
-/*import ArriveAlive from './ArriveAlive'
-export default ArriveAlive*/
-
-/*export defaul
-    return (
-      <View>
-        <ArriveAlive />
-      </View>
-    )
-  }
-}
-*/
-
-/*import layoutTest from './layoutTest'
-export default layoutTest*/
-
-
-
-
-/*import personalInfoPage from './personalInfoPage'
-export default personalInfoPage*/
-
-
-
-/*const instructions = Platform.select({
+const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
 
-{export default class App extends Component {
+export default class personalInfoPage extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native hahah!
+          Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
@@ -83,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333377',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
@@ -95,4 +54,6 @@ const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 5,
   },
-});*/
+});
+
+//export default personalInfoPage;

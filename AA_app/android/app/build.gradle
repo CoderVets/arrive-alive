@@ -95,10 +95,10 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.aa_app"
+        applicationId "com.testapplication"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1

@@ -1,9 +1,4 @@
 # arrive-alive
-<<<<<<< HEAD
-
-#danni40 is here
-Anfleet
-=======
 Chimichanga
 easy
 testgit pull
@@ -23,4 +18,3 @@ Byran is here!!!
 Jorge said WTF again!
 Hello
 Brian E is here
->>>>>>> e127f6a9c1c2050cf6a1b7d3f877bbd6c129f73d
