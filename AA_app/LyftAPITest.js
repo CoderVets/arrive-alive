@@ -37,5 +37,28 @@ export default class LyftAPITest extends Component {
                 // do somthing with new stat
             });
         })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
+
+    render() {
+        if (this.state.isloading) {
+            return (
+                <View style={{flex: 1, paddingTop: 20}}>
+                    <ActivityIndicator />
+                </View>
+            );
+        }
+        
+        return (
+            <View style={{flex: 1, paddingTop: 20}}>
+                <ListView
+                    dataSource={this.state.dataSource}
+                    renderRow={(rowData) => <Text>{rowData.title},{rowData.type}
+                        </Text>}
+                />
+            </View>
+        );
     }
 }
