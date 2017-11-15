@@ -6,6 +6,8 @@ import {
   View,
   FlatList
 } from 'react-native';
+import APICheck from './APICheck'
+import base64 from './node_modules/base-64/base64'
 
 export default class LyftAPITest extends Component {
     constructor(props){
@@ -17,16 +19,19 @@ export default class LyftAPITest extends Component {
 
     componentDidMount() {
         return fetch('https://api.lyft.com/oauth/token',{
-            method: 'Post',
+            method: 'POST',
             headers:{
                 'Content-Type':'application/json',
-                'OaJiui9NK0hS':'SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri'
+                //'OaJiui9NK0hS':'SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri'
+                "Authorization": "Basic "+ base64.encode("OaJiui9NK0hS"+":"+"VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri")
             },
             body:JSON.stringify({
                 "grant_type":"client_credentials",
                 "scope":"public"
             })
         })
+        
+        .then(APICheck.checkStatus)
         .then((response) => response.json())
         .then((responseJson) => {
             let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !==
@@ -35,7 +40,8 @@ export default class LyftAPITest extends Component {
                 isloading: false,
                 dataSource: ds.cloneWithRows(responseJson),
             }, function() {
-                //console.log(this.state.dataSource)
+                //AccToken = dataSource.access_token
+                //console.log(AccToken)
             });
         })
         .catch((error) => {
@@ -43,7 +49,7 @@ export default class LyftAPITest extends Component {
         });
     }
 
-    console_log (){console.log(dataSource)}
+    
 
     /*renderRow(rowData){
         return (
@@ -80,6 +86,7 @@ export default class LyftAPITest extends Component {
                     dataSource={this.state.dataSource}
                     renderItem={({item})=>this.renderRow(item)}
                 />
+                <Text>done</Text>
             </View>
         );
     }
