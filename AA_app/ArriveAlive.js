@@ -28,7 +28,7 @@ export default class ArriveAlive extends React.Component {
         <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive </Text>
         <Button
             onPress={requestUberRide}
-            title="Request a Ride"
+            title="Request Ride"
             color="#841584"/>
       </View>
     );
