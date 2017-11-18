@@ -10,7 +10,8 @@
 		"base-64": "^0.1.0",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.49.3",
-		"react-navigation": "^1.0.0-beta.16"
+		"react-navigation": "^1.0.0-beta.16",
+		"utf8": "^2.1.2"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",

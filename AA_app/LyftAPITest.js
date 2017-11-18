@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import APICheck from './APICheck'
 import base64 from './node_modules/base-64/base64'
+import utf8 from './node_modules/utf8/utf8'
+
 
 export default class LyftAPITest extends Component {
     constructor(props){
@@ -23,7 +25,9 @@ export default class LyftAPITest extends Component {
             headers:{
                 'Content-Type':'application/json',
                 //'OaJiui9NK0hS':'SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri'
-                "Authorization": "Basic "+ base64.encode("OaJiui9NK0hS"+":"+"VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri")
+                "Authorization":"Basic "+ base64.encode(utf8.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"))
+                //"Authorization":"Basic "+ "OaJiui9NK0hS:VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"
+                //"Authorization":"Basic "+ base64.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri")
             },
             body:JSON.stringify({
                 "grant_type":"client_credentials",
