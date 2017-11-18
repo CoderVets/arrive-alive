@@ -4,7 +4,8 @@ import {
   ListView,
   Text,
   View,
-  FlatList
+  FlatList,
+  Alert
 } from 'react-native';
 import APICheck from './APICheck'
 import base64 from './node_modules/base-64/base64'
@@ -24,10 +25,7 @@ export default class LyftAPITest extends Component {
             method: 'POST',
             headers:{
                 'Content-Type':'application/json',
-                //'OaJiui9NK0hS':'SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri'
                 "Authorization":"Basic "+ base64.encode(utf8.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"))
-                //"Authorization":"Basic "+ "OaJiui9NK0hS:VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"
-                //"Authorization":"Basic "+ base64.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri")
             },
             body:JSON.stringify({
                 "grant_type":"client_credentials",
@@ -44,6 +42,7 @@ export default class LyftAPITest extends Component {
                 isloading: false,
                 dataSource: ds.cloneWithRows(responseJson),
             }, function() {
+                Alert.alert(this.state.dataSource._dataBlob.s1.access_token);
                 //AccToken = dataSource.access_token
                 //console.log(AccToken)
             });
