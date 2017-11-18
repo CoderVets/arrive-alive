@@ -28,8 +28,8 @@ export default class ProfileButton2 extends Component {
 
 var styles = StyleSheet.create({
   profilePic: {
-    width: 200,
-    height: 200,
+    width: 450,
+    height: 450,
     borderRadius: 30,
   },
 });
