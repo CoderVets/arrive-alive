@@ -21,8 +21,8 @@ class ProfileButton extends React.Component {
 
 var styles = StyleSheet.create({
   profilePic: {
-    width: 300,
-    height: 300,
+    width: 400,
+    height: 400,
     borderRadius: 30,
   },
 });
