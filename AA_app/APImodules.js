@@ -4,6 +4,7 @@ import {
   Text
 } from 'react-native'
 import base64 from './node_modules/base-64/base64'
+import APICheck from './APICheck'
 
 export const LyftAccesToken = () => {
     return fetch('https://api.lyft.com/oauth/token',{
@@ -20,7 +21,26 @@ export const LyftAccesToken = () => {
     .then((response) => response.json())
     .then((responseJason) => {
         return AccToken = responseJason.access_token,
-        Alert.alert(AccToken)
-    })  
+        LyftETA(AccToken)
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+};
+
+export const LyftETA = (AccToken) => {
+    return fetch('https://api.lyft.com/v1/eta?lat=38.790163&lng=-90.532173',{
+        method: 'get',
+        headers: {'Authorization': 'Bearer '+AccToken}
+    })
+    //.then(APICheck.checkStatus)
+    .then((response) => response.json())
+    .then((responseJason) => {
+        return responseJason,
+        Alert.alert(responseJason.eta_estimates)
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 };
 
