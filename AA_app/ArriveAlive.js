@@ -11,12 +11,24 @@ import {
   Image
 } from 'react-native'
 import {StackNavigator} from 'react-navigation'
+import * as API from './APImodules'
 
 export default class ArriveAlive extends React.Component {
   render() {
     const{ navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+      <TouchableHighlight onPress={() => API.LyftAccesToken()}>
+          <Image
+              
+              source={require('./assets/bananaVar1.jpg')}
+              style={styles.profilePic}
+          />
+      </TouchableHighlight>
+      <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive </Text>
+    </View>
+      /*<View style={styles.container}>
         <TouchableHighlight onPress={() => navigate('Profile')}>
             <Image
                 
@@ -26,7 +38,7 @@ export default class ArriveAlive extends React.Component {
         </TouchableHighlight>
         <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
           <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive </Text>
-      </View>
+      </View>*/
     );
   }
 }

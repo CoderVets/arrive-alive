@@ -25,7 +25,8 @@ export default class LyftAPITest extends Component {
             method: 'POST',
             headers:{
                 'Content-Type':'application/json',
-                "Authorization":"Basic "+ base64.encode(utf8.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"))
+                "Authorization":"Basic "+ base64.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri")
+                //"Authorization":"Basic "+ base64.encode(utf8.encode("OaJiui9NK0hS:SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"))
             },
             body:JSON.stringify({
                 "grant_type":"client_credentials",
@@ -42,8 +43,9 @@ export default class LyftAPITest extends Component {
                 isloading: false,
                 dataSource: ds.cloneWithRows(responseJson),
             }, function() {
-                Alert.alert(this.state.dataSource._dataBlob.s1.access_token);
-                //AccToken = dataSource.access_token
+                //Alert.alert("Access Token: " +this.state.dataSource._dataBlob.s1.access_token);
+                AccToken = this.state.dataSource._dataBlob.s1.access_token
+                Alert.alert(AccToken)
                 //console.log(AccToken)
             });
         })
@@ -77,7 +79,7 @@ export default class LyftAPITest extends Component {
         /*return (
             <View style={{flex: 1, paddingTop: 20}}>
                 <ListView
-                    dataSource={this.state.dataSource}
+                    dataSource={this.state.dataSource._dataBlob.s1}
                     renderRow={this.renderRow}
                 />
             </View>
@@ -86,6 +88,7 @@ export default class LyftAPITest extends Component {
             <View style={{flex: 1, paddingTop: 20}}>
                 <FlatList
                     keyExtractor={item => access_token}
+                    //dataSource={this.state.dataSource}
                     dataSource={this.state.dataSource}
                     renderItem={({item})=>this.renderRow(item)}
                 />

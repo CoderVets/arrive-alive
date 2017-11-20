@@ -11,7 +11,8 @@ import LyftAPITest from './LyftAPITest'
 
 const App=StackNavigator({
   Home: {screen: ArriveAlive},
-  Profile: {screen: LyftAPITest}
+  //Profile: {screen: LyftAccesToken}
+  //Profile: {screen: LyftAPITest}
   //Profile: {screen: ProfilePage},
   
 })
