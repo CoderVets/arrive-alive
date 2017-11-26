@@ -6,13 +6,14 @@ import {
 import base64 from './node_modules/base-64/base64'
 import APICheck from './APICheck'
 
-var ClientID = 'OaJiui9NK0hS'
-var ClientSecret = 'SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri'
+var ClientID = "OaJiui9NK0hS"
+var ClientSecret = "SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"
 var AccToken = undefined
-var AuthCode = undefined
-var RideACCToken = undefined
+var AuthCode = "LjDTobmAqMRnOZz6"
+var RideACCToken = "zk3IVWs5Wt3002psfRQ/ftUO6OOX1AefZ2fGRBn7N3Mn6j7wTWXVpviNzv0doM03EBQO4dcBYQXb1IeYA2OoLemgoBz2T+CIGQCuseLBSZnD9TvdrlGP5Zg="
+var ride_id = "1724661421621973300"
 
-export const LyftAccesToken = (ClientID,ClientSecret) => {
+export const LyftAccesToken = () => {
     return fetch('https://api.lyft.com/oauth/token',{
         method: 'Post',
         headers: {
@@ -27,6 +28,7 @@ export const LyftAccesToken = (ClientID,ClientSecret) => {
     .then((response) => response.json())
     .then((responseJason) => {
         return AccToken = responseJason.access_token,
+        //Alert.alert(responseJason)
         LyftETA(AccToken)
     })
     .catch((error) => {
@@ -34,7 +36,7 @@ export const LyftAccesToken = (ClientID,ClientSecret) => {
     });
 };
 
-export const LyftETA = (AccToken) => {
+export const LyftETA = () => {
     return fetch('https://api.lyft.com/v1/eta?lat=38.790163&lng=-90.532173',{
         method: 'get',
         headers: {'Authorization': 'Bearer '+AccToken}
@@ -50,7 +52,7 @@ export const LyftETA = (AccToken) => {
     });
 };
 
-export const UsersLyftAccount = (ClientID) => {
+/*export const UsersLyftAccount = () => {
     return fetch('https://api.lyft.com/oauth/authorize?client_id=' + ClientID + '&scope=public%20profile%20rides.read%20rides.request%20offline&state=AriveAlive&response_type=code',{
         method: 'get'
     })
@@ -58,46 +60,52 @@ export const UsersLyftAccount = (ClientID) => {
     .then((responseJason) => {
         return AuthCode = responseJason.code,
         Alert.alert('UsersLyftAccount :' + AuthCode)
-        LyftRideToken(AuthCode)
+        //LyftRideToken(AuthCode)
     })
     .catch((error) => {
         console.error(error);
     });
-}
+}*/
 
-export const LyftRideToken = (AuthCode,ClientID,ClientSecret) => {
+export const LyftRideToken = () => {
     return fetch('https://api.lyft.com/oauth/token',{
         method: 'Post',
         headers: {
-            'Content-Type':'applicaton/json;charset=UTF-8',
-            "Autherization":"Basic "+ base64.encode(ClientID + ":" + ClientSecret)
+            'Content-Type':'application/json',
+            "Authorization":"Basic "+ base64.encode(ClientID + ":" + ClientSecret)
         },
-        body:JSON.stringify({
-            "grant_type":"authorization_code",
-            "code":AuthCode
+        body:JSON.stringify ({
+            "grant_type": "authorization_code",
+            "code": AuthCode
         })
     })
+    //.then(APICheck.checkStatus)
     .then((response) => response.json())
     .then((responseJason) => {
         return RideACCToken = responseJason.access_token,
-        Alert.alert(RideACCToken)
-        LyftRideReq (RideACCToken)
+        Alert.alert(responseJason)
+        //LyftRideRe(RideACCToken)
     })
     .catch((error) => {
         console.error(error);
     });
 }
 
-export const LyftRideReq = (RideACCToken) => {
-    //return fetch('https://api.lyft.com/v1/****?lat=38.790163&lng=-90.532173',{
-        method: 'get',
-        headers: {'Authorization': 'Bearer '+ RideACCToken}
+export const LyftRideReq = () => {
+    return fetch('https://api.lyft.com/v1/rides',{
+        method: 'post',
+        headers: {'Authorization': 'Bearer '+ RideACCToken},
+        body:JSON.stringify ({
+            "origin" : {"lat" : 38.790163, "lng" : -90.532173 },
+            "destination" : {"lat" : 38.762333, "lng" : -90.526344},
+            "ride_type" : "lyft"
+        })
     })
     //.then(APICheck.checkStatus)
     .then((response) => response.json())
     .then((responseJason) => {
         return responseJason,
-        //Alert.alert(responseJason.****)
+        Alert.alert(responseJason)
     })
     .catch((error) => {
         console.error(error);
