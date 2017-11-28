@@ -9,8 +9,8 @@ import APICheck from './APICheck'
 var ClientID = "OaJiui9NK0hS"
 var ClientSecret = "SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"
 var AccToken = undefined
-var AuthCode = "LjDTobmAqMRnOZz6"
-var RideACCToken = "zk3IVWs5Wt3002psfRQ/ftUO6OOX1AefZ2fGRBn7N3Mn6j7wTWXVpviNzv0doM03EBQO4dcBYQXb1IeYA2OoLemgoBz2T+CIGQCuseLBSZnD9TvdrlGP5Zg="
+var AuthCode = "bDrUnhez_zzaRNVC"
+//var RideACCToken = "ljTv+G7rSEWY3u4jS9QAnRbpt+aQq+WegCybkRUzoA4P7XHt3uheFGf16V4ho9Zg2zwWFsGFJoqePu8zsQ15Brb0/je1l0PmDYeaQKqxHt7YBDAdOLtmhe8="
 var ride_id = "1724661421621973300"
 
 export const LyftAccesToken = () => {
@@ -83,8 +83,8 @@ export const LyftRideToken = () => {
     .then((response) => response.json())
     .then((responseJason) => {
         return RideACCToken = responseJason.access_token,
-        Alert.alert(responseJason)
-        //LyftRideRe(RideACCToken)
+        //Alert.alert(responseJason)
+        LyftRideReq(RideACCToken)
     })
     .catch((error) => {
         console.error(error);
@@ -95,10 +95,14 @@ export const LyftRideReq = () => {
     return fetch('https://api.lyft.com/v1/rides',{
         method: 'post',
         headers: {'Authorization': 'Bearer '+ RideACCToken},
-        body:JSON.stringify ({
-            "origin" : {"lat" : 38.790163, "lng" : -90.532173 },
-            "destination" : {"lat" : 38.762333, "lng" : -90.526344},
-            "ride_type" : "lyft"
+        body: JSON.stringify ({
+            //"origin" : {"lat" : 38.790163, "lng" : -90.532173 },
+            //"destination" : {"lat" : 38.762333, "lng" : -90.526344},
+            "ride_type": "lyft",
+            "origin.lat":38.79016,
+            "origin.lng":-90.53217,
+            "destination.lat":38.76233,
+            "destination.lng":-90.52634
         })
     })
     //.then(APICheck.checkStatus)
