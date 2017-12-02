@@ -18,7 +18,6 @@ export default class ArriveAlive extends React.Component {
   render() {
     const{ navigate } = this.props.navigation;
     return (
-
       <View style={styles.container}>
       <TouchableHighlight onPress={() => API.LyftRideToken()}>
           <Image 

@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 import base64 from './node_modules/base-64/base64'
 import APICheck from './APICheck'
+import * as API from './APImodules'
 
 class APITest1 extends Component {
     constructor(props){
@@ -28,7 +29,8 @@ class APITest1 extends Component {
     }
 
     componentDidMount(){
-        return fetch('https://api.lyft.com/oauth/token',{
+        API.LyftAccesToken(this.state.ClientID,this.state.ClientSecret)
+        /*fetch('https://api.lyft.com/oauth/token',{
             method: 'Post',
             headers: {
                 'Content-Type':'application/json',
@@ -38,14 +40,15 @@ class APITest1 extends Component {
                 "grant_type":"client_credentials",
                 "scope":"public"
             })
-        })
+        })*/
         .then((response) => response.json())
         .then((json) => {
             this.setState({ AccToken: `${json.access_token}`})
             this.setState({ ExpiresIn: `${json.expires_in}`})
             //return AccToken = json.access_token,
             //Alert.alert(json)
-            this.LyftETA(`${this.state.AccToken}`)
+            console.log(json.access_token,json.expires_in)
+            //this.LyftETA(`${this.state.AccToken}`)
         })
         .catch((error) => {
             console.error(error);
@@ -53,7 +56,7 @@ class APITest1 extends Component {
     };
 
     LyftETA(AccToken) {
-        return fetch('https://api.lyft.com/v1/eta?lat=38.790163&lng=-90.532173',{
+        fetch('https://api.lyft.com/v1/eta?lat=38.790163&lng=-90.532173',{
             method: 'get',
             headers: {'Authorization': 'Bearer '+AccToken}
         })
@@ -61,7 +64,8 @@ class APITest1 extends Component {
         .then((response) => response.json())
         .then((responseJason) => {
             return responseJason,
-            Alert.alert(responseJason.eta_estimates)
+            //Alert.alert(responseJason.eta_estimates)
+            console.log(responseJason.eta_estimates)
         })
         .catch((error) => {
             console.error(error);
