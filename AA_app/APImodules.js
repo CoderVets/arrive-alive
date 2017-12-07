@@ -83,7 +83,6 @@ export const LyftRideToken = () => {
     .then((response) => response.json())
     .then((responseJason) => {
         return RideACCToken = responseJason.access_token,
-        //Alert.alert(responseJason)
         LyftRideReq(RideACCToken)
     })
     .catch((error) => {
@@ -110,17 +109,7 @@ export const LyftRideReq = () => {
             'Authorization': 'Bearer '+ RideACCToken
         },
         body: formBody
-        /*body: JSON.stringify ({
-            "origin.lat": 38.79016,
-            "origin.lng": -90.53217,
-            "destination.lat": 38.76233,
-            "destination.lng": -90.52634
-        })*/
     })
-    //"ride_type": "lyft",
-    //"origin" : {"lat" : 38.790163, "lng" : -90.532173 },
-    //"destination" : {"lat" : 38.762333, "lng" : -90.526344},
-    //.then(APICheck.checkStatus)
     .then((response) => response.json())
     .then((responseJason) => {
         return responseJason,
