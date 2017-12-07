@@ -9,7 +9,7 @@ import APICheck from './APICheck'
 var ClientID = "OaJiui9NK0hS" //undefined //
 var ClientSecret = "SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri" //undefined //
 var AccToken = undefined
-var AuthCode = "K8pkci60QGmRr89v"
+var AuthCode = "ja1A4VgmGYzTa6Gr"
 //var RideACCToken = "ljTv+G7rSEWY3u4jS9QAnRbpt+aQq+WegCybkRUzoA4P7XHt3uheFGf16V4ho9Zg2zwWFsGFJoqePu8zsQ15Brb0/je1l0PmDYeaQKqxHt7YBDAdOLtmhe8="
 var ride_id = "1724661421621973300"
 
@@ -93,20 +93,31 @@ export const LyftRideToken = () => {
 
 export const LyftRideReq = () => {
     console.log(RideACCToken);
-    fetch('https://api.lyft.com/v1/rides',{
+    var param = {
+        'ride_type':'lyft',
+        'origin.lat':38.790163,
+        'origin.lng': -90.53217,
+        'destination.lat':38.762333,
+        'destination.lng': -90.52634
+    };
+    var formbody = [];
+    const formBody = Object.keys(param)
+    .map(key=>encodeURIComponent(key)+'='+encodeURIComponent(param[key])).join('&')
+    fetch('https://api.lyft.com/v1/rides?',{
         method: 'Post',
         headers: {
-            'Content-Type':'application/json',
+            'Content-Type':'application/x-www-form-urlencoded',
             'Authorization': 'Bearer '+ RideACCToken
         },
-        body: JSON.stringify ({
-            "ride_type": "lyft",
+        body: formBody
+        /*body: JSON.stringify ({
             "origin.lat": 38.79016,
             "origin.lng": -90.53217,
             "destination.lat": 38.76233,
             "destination.lng": -90.52634
-        })
+        })*/
     })
+    //"ride_type": "lyft",
     //"origin" : {"lat" : 38.790163, "lng" : -90.532173 },
     //"destination" : {"lat" : 38.762333, "lng" : -90.526344},
     //.then(APICheck.checkStatus)

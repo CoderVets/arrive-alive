@@ -64,8 +64,7 @@ class APITest1 extends Component {
         .then((response) => response.json())
         .then((responseJason) => {
             return responseJason,
-            //Alert.alert(responseJason.eta_estimates)
-            console.log(responseJason.eta_estimates)
+            Alert.alert(responseJason.eta_estimates)
         })
         .catch((error) => {
             console.error(error);
