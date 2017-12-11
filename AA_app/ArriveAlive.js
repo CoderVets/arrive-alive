@@ -20,15 +20,15 @@ export default class ArriveAlive extends React.Component {
         <TouchableHighlight onPress={() => navigate('Profile')}>
             <Image
                 
-                source={require('./assets/bananaVar1.jpg')}
+                source={require('./assets/arrive-alive.jpg')}
                 style={styles.profilePic}
             />
         </TouchableHighlight>
         <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
-        <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive</Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive </Text>
         <Button
             onPress={requestUberRide}
-            title="Request Ride"
+            title="Request a Ride"
             color="#841584"/>
       </View>
     );
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'skyblue',
 
     alignItems: 'center',
+
     justifyContent: 'center',
   },
   profilePic: {
