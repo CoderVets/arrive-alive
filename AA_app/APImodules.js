@@ -6,10 +6,10 @@ import {
 import base64 from './node_modules/base-64/base64'
 import APICheck from './APICheck'
 
-var ClientID = "OaJiui9NK0hS" //undefined //
-var ClientSecret = "SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri" //undefined //
+var ClientID = "OaJiui9NK0hS"
+var ClientSecret = "SANDBOX-VNDXMeFb-qwyMsEzZ-r5e82AzBtIg0ri"
 var AccToken = undefined
-var AuthCode = "ja1A4VgmGYzTa6Gr"
+var AuthCode = "rnUBCwQEriDSFRTL"
 //var RideACCToken = "ljTv+G7rSEWY3u4jS9QAnRbpt+aQq+WegCybkRUzoA4P7XHt3uheFGf16V4ho9Zg2zwWFsGFJoqePu8zsQ15Brb0/je1l0PmDYeaQKqxHt7YBDAdOLtmhe8="
 var ride_id = "1724661421621973300"
 
