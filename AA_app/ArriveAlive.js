@@ -10,17 +10,20 @@ import {
   TouchableHighlight,
   Image
 } from 'react-native'
+// bring in all our style functions from React
 import {StackNavigator} from 'react-navigation'
 
 export default class ArriveAlive extends React.Component {
+  // creates our class and declares it as an extention of the React Component, 
+  // meaning it can do anything that the React Component can do plus what we add below
   render() {
     const{ navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <TouchableHighlight onPress={() => navigate('Profile')}>
             <Image
-                
                 source={require('./assets/arrive-alive.jpg')}
+                // accesses our local image to be used on our main screen
                 style={styles.profilePic}
             />
         </TouchableHighlight>
@@ -36,6 +39,7 @@ export default class ArriveAlive extends React.Component {
 }
 
 async function requestUberRide() {
+  // this should call to Uber's API if it is working properly
   var fare_id = await getFareId();
   try {
     let response = await fetch('https://sandbox-api.uber.com/v1.2/requests', {
