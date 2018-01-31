@@ -15,33 +15,56 @@ export default class ProfilePage extends React.Component {
             <ScrollView contentContainerStyle={styles.container}>
                 <TextInput
                     style={styles.inputName}
-                    placeholder="Name:"
+                    placeholder="Name"
                 />
                 <TextInput
-                    style={styles.inputAddress} //changed from inputName to inputAddress
-                    placeholder="Address:"
+                    style={styles.inputName}
+                    placeholder="Address"
                 />
                 <TextInput
-                    style={styles.inputEmail} //changed from inputName to inputEmail
-                    placeholder="Email:"
+                    style={styles.inputName}
+                    placeholder="Email"
                 />
                 <TextInput
-                    style={styles.inputPhone} //changed from inputName to inputPhone
+                    style={styles.inputName}
+                    placeholder="Unit"
+                />
+                <TextInput
+                    style={styles.inputName}
+                    placeholder="Last 4 of SSN"
+                />
+                <TextInput
+                    style={styles.inputName}
                     placeholder="Phone No"
                 />
                 <TextInput
                     style={styles.inputName}
-                    placeholder=" tba "
+                    placeholder="tba"
                 />
                 <TextInput
                     style={styles.inputName}
-                    placeholder=" tba "
+                    placeholder="input 8"
                 />
                 <TextInput
                     style={styles.inputName}
-                    placeholder=" tba "         //deleted extra textinupt boxes
+                    placeholder="input 9"
                 />
-                                                
+                <TextInput
+                    style={styles.inputName}
+                    placeholder="input 10"
+                />
+                <TextInput
+                    style={styles.inputName}
+                    placeholder="input 11"
+                />
+                <TextInput
+                    style={styles.inputName}
+                    placeholder="input 12"
+                />
+                <TextInput
+                    style={styles.inputName}
+                    placeholder="input 13"
+                />
             </ScrollView>
         )
     }
@@ -50,76 +73,33 @@ export default class ProfilePage extends React.Component {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor: 'cyan',
+        backgroundColor: 'red',
     },
     inputName: {
         //flex: 1,
-        height: 60,
+        height: 75,
         fontSize: 30,
-        //backgroundColor: '#0000',
-       // borderColor: 'black',
+        backgroundColor: '#fff',
+        borderColor: 'blue',
         borderWidth: 5,
         color: 'blue',
         width: 350,
     },
     inputAddress: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: 'green',  
-        width: 350,
+        flex: 2,
+        backgroundColor: '#040',
+        borderColor: 'blue',
+        borderWidth: 10,
     },
     inputEmail: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: 'red',
-        width: 350,
+        flex: 3,
+        backgroundColor: 'green',
+        borderWidth: 1,
     },
-    inputPhone: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: 'black',
-        width: 350,
+    input4: {
+        flex: 1,
+        backgroundColor: '#000',
 
-    }, 
-    inputName: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: '',
-        width: 350,
-
-    },
-    inputName: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: 'blue',
-        width: 350,
-    },
-    inputName: {
-        height: 60,
-        fontSize: 30,
-        backgroundColor: '#fff',
-       // borderColor: 'blue',
-        borderWidth: 5,
-        color: 'blue',
-        width: 350,             //corrected color for all boxes  removed flex and changed height from 75 to 60
-
-    },
-
-
+    } 
 }
 )
