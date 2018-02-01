@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component{
             /*<Button
                 title = 'press me'
                 onPress={() =>
-                navigate('ProfilePage')
+                navigate('profilePage')
                 }
             />*/
             <ArriveAlive />
