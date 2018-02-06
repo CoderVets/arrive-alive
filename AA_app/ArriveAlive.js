@@ -28,7 +28,7 @@ export default class ArriveAlive extends React.Component {
             />
         </TouchableHighlight>
         <Text style={{fontSize: 30, fontStyle: "italic"}} >Arrive</Text>
-        <Text style={{fontSize: 30, fontStyle: "italic"}}>      Alive </Text>
+        <Text style={{fontSize: 30, fontStyle: "italic"}}>Alive</Text>
         <Button
             onPress={requestUberRide}
             title="Request a Ride"
