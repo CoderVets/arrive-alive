@@ -18,53 +18,26 @@ export default class ProfilePage extends React.Component {
                     placeholder="Name"
                 />
                 <TextInput
-                    style={styles.inputName}
+                    style={styles.inputAddress}
                     placeholder="Address"
                 />
                 <TextInput
-                    style={styles.inputName}
+                    style={styles.inputEmail}
                     placeholder="Email"
                 />
                 <TextInput
-                    style={styles.inputName}
-                    placeholder="Unit"
+                    style={styles.inputPhone}
+                    placeholder="Phone#"
                 />
                 <TextInput
-                    style={styles.inputName}
+                    style={styles.inputSSN}
                     placeholder="Last 4 of SSN"
                 />
                 <TextInput
-                    style={styles.inputName}
-                    placeholder="Phone No"
+                    style={styles.inputUnit}
+                    placeholder="Unit"
                 />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="tba"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 8"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 9"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 10"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 11"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 12"
-                />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder="input 13"
-                />
+               
             </ScrollView>
         )
     }
@@ -73,33 +46,68 @@ export default class ProfilePage extends React.Component {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: 'blue',
     },
     inputName: {
         //flex: 1,
-        height: 75,
+        height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-        borderColor: 'blue',
+        borderColor: 'black',
         borderWidth: 5,
         color: 'blue',
         width: 350,
     },
+    
     inputAddress: {
-        flex: 2,
-        backgroundColor: '#040',
-        borderColor: 'blue',
-        borderWidth: 10,
+        //flex: 1,
+        height: 60,
+        fontSize: 30,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 5,
+        color: 'blue',
+        width: 350,
     },
     inputEmail: {
-        flex: 3,
-        backgroundColor: 'green',
-        borderWidth: 1,
+        //flex: 1,
+        height: 60,
+        fontSize: 30,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 5,
+        color: 'blue',
+        width: 350,
     },
-    input4: {
-        flex: 1,
-        backgroundColor: '#000',
-
-    } 
+    inputPhone: {
+        //flex: 1,
+        height: 60,
+        fontSize: 30,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 5,
+        color: 'blue',
+        width: 350,
+    },
+    inputSSN: {
+        //flex: 1,
+        height: 60,
+        fontSize: 30,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 5,
+        color: 'blue',
+        width: 350,
+    },
+    inputUnit: {
+        //flex: 1,
+        height: 60,
+        fontSize: 30,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 5,
+        color: 'blue',
+        width: 350,
+    },
 }
 )
