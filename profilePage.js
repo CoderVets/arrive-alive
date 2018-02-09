@@ -18,30 +18,25 @@ export default class ProfilePage extends React.Component {
                     placeholder="Name:"
                 />
                 <TextInput
-                    style={styles.inputAddress} //changed from inputName to inputAddress
+                    style={styles.inputAddress} 
                     placeholder="Address:"
                 />
                 <TextInput
-                    style={styles.inputEmail} //changed from inputName to inputEmail
+                    style={styles.inputEmail}
                     placeholder="Email:"
                 />
                 <TextInput
-                    style={styles.inputPhone} //changed from inputName to inputPhone
-                    placeholder="Phone No"
+                    style={styles.inputPhone} 
+                    placeholder="Phone #"
                 />
                 <TextInput
-                    style={styles.inputName}
-                    placeholder=" tba "
+                    style={styles.inputSSN}
+                    placeholder=" last 4 ssn"
                 />
                 <TextInput
-                    style={styles.inputName}
-                    placeholder=" tba "
+                    style={styles.inputUnit)
+                    placeholder=" Unit Name"
                 />
-                <TextInput
-                    style={styles.inputName}
-                    placeholder=" tba "         //deleted extra textinupt boxes
-                />
-                                                
             </ScrollView>
         )
     }
@@ -50,14 +45,13 @@ export default class ProfilePage extends React.Component {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor: 'cyan',
+        backgroundColor: 'blue',
     },
     inputName: {
-        //flex: 1,
         height: 60,
         fontSize: 30,
-        //backgroundColor: '#0000',
-       // borderColor: 'black',
+        backgroundColor: '#fff',
+        borderColor: 'black',
         borderWidth: 5,
         color: 'blue',
         width: 350,
@@ -66,27 +60,27 @@ const styles = StyleSheet.create({
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
-        color: 'green',  
+        color: 'blue',  
         width: 350,
     },
     inputEmail: {
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
-        color: 'red',
+        color: 'blue',
         width: 350,
     },
     inputPhone: {
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
-        color: 'black',
+        color: 'blue',
         width: 350,
 
     }, 
@@ -94,9 +88,9 @@ const styles = StyleSheet.create({
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
-        color: '',
+        color: 'blue',
         width: 350,
 
     },
@@ -104,7 +98,7 @@ const styles = StyleSheet.create({
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
         color: 'blue',
         width: 350,
@@ -113,10 +107,10 @@ const styles = StyleSheet.create({
         height: 60,
         fontSize: 30,
         backgroundColor: '#fff',
-       // borderColor: 'blue',
+		borderColor: 'black',
         borderWidth: 5,
         color: 'blue',
-        width: 350,             //corrected color for all boxes  removed flex and changed height from 75 to 60
+        width: 350,            
 
     },
 
