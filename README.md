@@ -20,7 +20,6 @@ git clone https://github.com/CoderVets/arrive-alive.git
 ```
 
 After cloning you have to setup the directory by downloading the dependencies.
-First make sure you are in the right directory `arrive-alive/AA_app`
 
 Run the command:
 
@@ -33,7 +32,7 @@ This will download all the node library dependencies that the application needs 
 # Running the App
 
 ## IOS
-Inside the directory `arrive-alive/AA_app` run:
+Run:
 
 ```
 react-native run-ios
@@ -43,7 +42,7 @@ Note that you need a Mac computer to run this command.
 
 ## Android
 Make sure you have an emulator running for Android.
-Within the directory `arrive-alive/AA_app` run:
+Run:
 
 ```
 react-native run-android
